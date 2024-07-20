@@ -18,16 +18,12 @@ public:
         }
         int ans = INT_MAX;
         for(auto &a: mp){
-            if(maxGap[a.first]==n/2){
-                int to_be_changed = n/2 - a.second;
-                ans = min(ans,to_be_changed);
-            }
-            else{
+            
                 int one_element_change = maxGap[a.first]-a.second;
                 int two_element_change = (n/2-maxGap[a.first])*2;
                 int total = one_element_change+two_element_change;
                 ans = min(ans,total);
-            }
+            
             
         }
         return ans;
